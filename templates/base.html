@@ -1,0 +1,206 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  {%block title%} CERID{%endblock%}
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    nav {
+      background-color: #0B3D91;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      top: 0;
+      position: fixed;
+      width: 100%;
+      height: 35px;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem; 
+    }
+    
+    .logo h1 {
+      color: white;
+      margin: 0;
+      padding: 0;
+      font-weight: 600;
+    }
+
+    .logo .web_log {
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+    }
+
+    .nav-links {
+      display: inline-flex;
+      align-items: center;
+      gap: 1.5rem;
+      width: 65%;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      background-color: white;
+      color: #0b3d91;
+      border-radius: 0.2em;
+    }
+    .content{
+      margin-top: 35px; 
+      /* padding: 20px; */
+      background-color: #f4f4f4;
+      min-height: 100vh; /* Ensure it takes full height */
+      display: flex;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-button {
+      background-color: #0B3D91; 
+      border: none;
+      color: white;
+      cursor: pointer;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      color: black;
+      min-width: 200px;
+      z-index: 1;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 5px;
+      margin-top: 5px; /* Spacing from the button */
+    }
+
+    .dropdown-content a {
+      padding: 10px;
+      display: block;
+      color: #0b3d91;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .dropdown.active .dropdown-content {
+      display: block;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 700px) {
+      .hamburger {
+        display: block;
+        margin-right: 70px;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #0b3d91;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 60%;
+        padding: 1rem;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">
+      <h1>CERID</h1>
+      <img src="{% static 'images/IMG_20240428_145712.jpg' %}" alt="logo" class="web_log">
+    </div>
+
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    <div class="nav-links" id="navLinks">
+      <a href="{% url 'home' %}" id="nav-home">Home</a>
+
+      <div class="dropdown">
+        <button class="dropdown-button" onclick="toggleDropdown()">About Us &#9662;</button>
+        <div class="dropdown-content" id="dropdownContent">
+          <a href="{% url 'mission' %}">Our Mission</a>
+          <a href="{% url 'leadership' %}">CELID Leadership</a>
+          <a href="#">Our History</a>
+          <a href="#">Parteners</a>
+          <a href="#">Document</a>
+        </div>
+      </div>
+
+
+      <a href="#projects" id="nav-projects">Our Projects</a>
+      <a href="{% url 'donate' %}" id="nav-donate">Donate</a>
+      <a href="#transparency" id="nav-transparency">Transparency</a>
+      <a href="#contact" id="nav-contact">Contact</a>
+    </div>
+  </nav>
+  
+  <main class="content">
+    {% block content %}
+    {% endblock %}
+  </main>
+
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById("navLinks");
+      navLinks.classList.toggle("active");
+    }
+
+    function toggleDropdown() {
+      const dropdown = document.getElementById("dropdownContent");
+      dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+    }
+
+    // Close the dropdown if clicked outside
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropdown-button')) {
+        const dropdowns = document.getElementsByClassName("dropdown-content");
+        for (let i = 0; i < dropdowns.length; i++) {
+          dropdowns[i].style.display = "none";
+        }
+      }
+    };
+  </script>
+
+</body>
+</html>

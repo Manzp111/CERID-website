@@ -1,0 +1,120 @@
+﻿
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(to right, #0B3D91, #4b0082);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  background-color: white;
+  color: #0B3D91;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #e0e0e0;
+}
+
+/* Image Section */
+.image-section {
+  text-align: center;
+  padding: 30px 10px;
+}
+
+.image-section img {
+  max-width: 90%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+/* Stats Section */
+.stats-section {
+  padding: 50px 20px;
+  background-color: #f0f0f0;
+  text-align: center;
+}
+
+.stats-section h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.stat-box {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 260px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.stat-box h3 {
+  font-size: 2.5rem;
+  color: #0B3D91;
+}
+
+.stat-box p {
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.stat-box small {
+  display: block;
+  color: #666;
+  margin-top: 5px;
+}
+
+/* Testimonial */
+.testimonial-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.testimonial-section blockquote {
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.author {
+  color: #0B3D91;
+  font-weight: bold;
+}
+
+.translation {
+  color: #666;
+  font-size: 0.95rem;
+  margin-top: 8px;
+}

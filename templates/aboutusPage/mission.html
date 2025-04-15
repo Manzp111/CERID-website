@@ -1,0 +1,159 @@
+﻿{% extends 'base.html' %}
+{% load static %}
+{% block title %}About Us - Health Research NGO{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+
+        .hero-section {
+            background: url("{% static 'photos/health_hero.jpg' %}") no-repeat center center;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero-section h1 {
+            font-size: 2.5rem;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+        }
+
+        .btn {
+            background-color: #0B3D91;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .feature-box {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .feature-box img {
+            width: 100%;
+            border-radius: 10px;
+            height: auto;
+        }
+
+        .team-member {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+
+        .team-member h5 {
+            margin: 10px 0 5px;
+        }
+
+        .team-member p {
+            margin: 0;
+            color: #777;
+        }
+
+        .text-center {
+            text-align: center;
+            margin: 40px 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="hero-section">
+        <h1>Welcome to Our Health Research NGO</h1>
+        <p>Advancing health through innovative research and community engagement.</p>
+        <a href="#donate" class="btn">Support Our Research</a>
+    </header>
+
+    <div class="container">
+        <div class="section-title">
+            <h2>About Us</h2>
+            <p class="lead">Our mission is to improve global health outcomes through rigorous research and collaboration.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="feature-box">
+                    <img src="{% static 'photos/research_mission.jpg' %}" alt="Our Mission">
+                    <h3>Our Mission</h3>
+                    <p>To conduct impactful health research that informs policies and improves lives.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="feature-box">
+                    <img src="{% static 'photos/research_history.jpg' %}" alt="Our History">
+                    <h3>Our History</h3>
+                    <p>Founded in 2015, we have partnered with local and international organizations to drive health improvements.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="feature-box">
+                    <img src="{% static 'photos/research_team.jpg' %}" alt="Our Team">
+                    <h3>Our Team</h3>
+                    <p>A diverse team of researchers dedicated to advancing health through science.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title">
+            <h2>Meet Our Leadership</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-4 team-member">
+                <img src="{% static 'photos/leader_1.jpeg' %}" alt="Dr. Jane Doe">
+                <h5>Dr. Jane Doe</h5>
+                <p>Executive Director</p>
+            </div>
+            <div class="col-md-4 team-member">
+                <img src="{% static 'photos/leader_2.jpeg' %}" alt="Dr. John Smith">
+                <h5>Dr. John Smith</h5>
+                <p>Chief Research Officer</p>
+            </div>
+            <div class="col-md-4 team-member">
+                <img src="{% static 'photos/leader_3.jpeg' %}" alt="Dr. Emily Brown">
+                <h5>Dr. Emily Brown</h5>
+                <p>Director of Operations</p>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <a href="#contact"><button class="btn">Contact Us</button></a>
+        </div>
+    </div>
+
+</body>
+</html>
+
+{% endblock %}
