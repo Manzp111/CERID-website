@@ -11,6 +11,8 @@ urlpatterns=[
     path("donate/",views.donate,name="donate"),
     path("leadership/",views.leaderTeam,name="leadership"),
     path("mission/",views.mission,name="mission"),
+    path("cred/",views.cred,name='cred'),
+    path("contact/",views.contact,name='contact'),
 
 ] 
 if settings.DEBUG:

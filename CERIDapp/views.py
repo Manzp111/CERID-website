@@ -1,10 +1,14 @@
 from django.shortcuts import render
+from . import  models
+from .models import ImageSlider
+
 
 def base(request):
     return render(request, 'base.html')
 
 def home(request):
-    return  render(request,'homepages/home.html')
+    sliders = ImageSlider.objects.all()
+    return render(request, 'homepages/home.html', {'slides': sliders})
 
 
 def donate(request):
@@ -17,6 +21,16 @@ def leaderTeam(request):
 
 def mission(request):
     return render(request,'aboutusPage/mission.html')
+
+
+def cred(request):
+    return render(request,'homepages/cred.html')
+
+
+def contact(request):
+    return render(request,'homepages/contact.html')
+
+
 
 
 

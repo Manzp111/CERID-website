@@ -1,128 +1,194 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            height: 2000px; /* For demonstration purposes */
-        }
-
-        /* Float four columns side by side */
-        .column {
-            float: left;
-            width: 25%;
-            padding: 0 5px;
-        }
-
-        .row {
-            margin: 0 -5px;
-        }
-
-        /* Clear floats after the columns */
-        .row:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-
-        /* Responsive columns */
-        @media screen and (max-width: 600px) {
-            .column {
-                width: 100%;
-                display: block;
-                margin-bottom: 10px;
-            }
-        }
-
-        /* Style the counter cards */
-        .card {
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            padding: 16px;
-            text-align: center;
-            background-color: #444;
-            color: white;
-        }
-
-        .fa {
-            font-size: 50px;
-        }
-    </style>
-</head>
-<body>
-
-<h2>Responsive Section Counter</h2>
-<p>Scroll down to see the counter effect.</p>
-<br>
-
-<div class="row" id="counter-section">
-    <div class="column">
-        <div class="card">
-            <p><i class="fa fa-user"></i></p>
-            <h3 class="counter" data-target="11">0</h3>
-            <p>Partners</p>
-        </div>
+{% extends "base.html" %}
+{% block title %}Donate{% endblock %}
+{% block content %}
+<div class="team-section">
+  <h1 style="text-align: center; color: #0B3D91;">Meet Our Team</h1>
+  <div class="team-container">
+    <div class="card">
+      <img src="../../static/images/IMG_20240428_145712.jpg" alt="Dr. Diane Karusisi">
+      <div class="card-info">
+        <h3>Dr. Gilbert</h3>
+        <p>Chief Executive Officer</p>
+        <button onclick="document.getElementById('id01').style.display='block'" class="profile-btn">View Profile →</button>
+      </div>
     </div>
-
-    <div class="column">
-        <div class="card">
-            <p><i class="fa fa-check"></i></p>
-            <h3 class="counter" data-target="55">0</h3>
-            <p>Projects</p>
-        </div>
-    </div>
-    
-    <div class="column">
-        <div class="card">
-            <p><i class="fa fa-smile-o"></i></p>
-            <h3 class="counter" data-target="100">0</h3>
-            <p>Happy Clients</p>
-        </div>
-    </div>
-    
-    <div class="column">
-        <div class="card">
-            <p><i class="fa fa-coffee"></i></p>
-            <h3 class="counter" data-target="100">0</h3>
-            <p>Meetings</p>
-        </div>
-    </div>
+  </div>
 </div>
 
+<!-- Profile Modal -->
+<div id="id01" class="modal">
+  <div class="modal-content animate">
+    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    <div class="profile-container">
+      <div class="profile-image">
+        <img src="../../static/images/IMG_20240428_145712.jpg" alt="Dr. Diane Karusisi">
+      </div>
+      <div class="profile-text">
+        <h1>Dr. Diane Karusisi</h1>
+        <h2>Chief Executive Officer</h2>
+        <p>
+          Dr. Diane Karusisi is the CEO of Bank of Kigali Plc, Rwanda's largest commercial bank.
+          As CEO, she has pioneered a new era of banking in Rwanda, making 24/7 access to financial
+          services the norm, wherever and whenever customers need them. Dr. Karusisi’s strategic
+          vision and innovative leadership...
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .team-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+
+  .card {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: white;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .card-info {
+    padding: 15px;
+    text-align: center;
+    background-color: #f4f8fc;
+  }
+
+  .card-info h3 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+
+  .card-info p {
+    font-size: 1rem;
+    margin: 5px 0;
+  }
+
+  .profile-btn {
+    background-color: #0B3D91;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  .profile-btn:hover {
+    background-color: #092a6d;
+  }
+
+  /* Modal Styles */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  .modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 0;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 800px;
+    position: relative;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  }
+
+  .close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+  }
+
+  .close:hover {
+    color: red;
+  }
+
+  .profile-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+
+  .profile-image {
+    flex: 1;
+    text-align: center;
+  }
+
+  .profile-image img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .profile-text {
+    flex: 2;
+    padding: 20px;
+    overflow-y: auto;
+  }
+
+  .profile-text h1 {
+    font-size: 26px;
+    margin-bottom: 8px;
+  }
+
+  .profile-text h2 {
+    font-size: 20px;
+    color: #0B3D91;
+    margin-bottom: 12px;
+  }
+
+  .profile-text p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  @media screen and (max-width: 600px) {
+    .profile-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .profile-text {
+      padding: 10px;
+    }
+  }
+</style>
+
 <script>
-    let hasCounted = false; // Flag to check if counting has occurred
-
-    window.addEventListener('scroll', function() {
-        const counterSection = document.getElementById('counter-section');
-        const sectionTop = counterSection.getBoundingClientRect().top;
-        const sectionVisible = window.innerHeight - sectionTop >= 0; // Check if the section is visible
-
-        if (sectionVisible && !hasCounted) {
-            const counters = document.querySelectorAll('.counter');
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-target');
-                let count = 0;
-                const speed = 2000; // Duration for counting in milliseconds
-                const increment = target / speed * 100; // Calculate the increment
-
-                const updateCount = setInterval(() => {
-                    count += increment;
-                    if (count >= target) {
-                        count = target;
-                        clearInterval(updateCount);
-                    }
-                    counter.innerText = Math.floor(count);
-                }, 100);
-            });
-            hasCounted = true; // Set flag to true to prevent counting again
-        }
-    });
+  window.onclick = function(event) {
+    const modal = document.getElementById('id01');
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
 </script>
-
-</body>
-</html>
+{% endblock %}
