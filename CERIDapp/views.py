@@ -30,7 +30,6 @@ def cred(request):
 def contact(request):
     return render(request,'homepages/contact.html')
 
-
-
-
+def our_project(request):
+    return render(request, 'our_project/index.html')
 

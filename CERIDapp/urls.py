@@ -13,6 +13,7 @@ urlpatterns=[
     path("mission/",views.mission,name="mission"),
     path("cred/",views.cred,name='cred'),
     path("contact/",views.contact,name='contact'),
+    path("our_project/",views.our_project, name="our_project"),
 
 ] 
 if settings.DEBUG:
