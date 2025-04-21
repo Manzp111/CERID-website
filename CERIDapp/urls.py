@@ -13,7 +13,10 @@ urlpatterns=[
     path("mission/",views.mission,name="mission"),
     path("cred/",views.cred,name='cred'),
     path("contact/",views.contact,name='contact'),
+    path("transparency/",views.transparency,name='transparency'),
     path("our_project/",views.our_project, name="our_project"),
+    path('testemonials/video/',views.view_testmonials,name='viewTestimonials'),
+
 
 ] 
 if settings.DEBUG:

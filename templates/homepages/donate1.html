@@ -1,0 +1,223 @@
+﻿{% extends 'base.html'  %}
+{% block title %}Why Donate?{% endblock %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Why Donate?</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f7fa;
+      margin: 0;
+      padding: 0;
+    }
+
+    .donation-section {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 40px 30px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .donation-section h2 {
+      text-align: center;
+      font-size: 2.5em;
+      color: #0b3d91;
+      margin-bottom: 10px;
+    }
+
+    .donation-section p {
+      color: #444;
+      font-size: 1.1em;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .highlight {
+      background-color: #e0f7fa;
+      padding: 15px 20px;
+      border-left: 5px solid #0b3d91;
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
+
+    .donation-types {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+    }
+
+    .type-card {
+      background: #f9f9f9;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+      transition: 0.3s;
+    }
+
+    .type-card:hover {
+      background: #e0f2f1;
+      transform: translateY(-5px);
+    }
+
+    .type-card h3 {
+      color: #0b3d91;
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .donation-section h2 {
+        font-size: 1.8em;
+      }
+    }
+    header {
+            /* background-color: #2563eb; */
+            color: ;
+            text-align: center;
+            padding: 20px;
+        }
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            margin: 10px;
+            width: 200px;
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 0;
+        }
+        .card h2 {
+            font-size: 1.5em;
+            color: white;
+            width: 100%;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+            padding: 10px 0;
+            margin: 0;
+        }
+        .card img, .card i {
+            height: 100px;
+            width: 100px;
+            margin: 15px 0;
+        }
+        .card img {
+            border-radius: 50%;
+        }
+        .card i {
+            font-size: 60px;
+            color: #2563eb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .button {
+            background-color: #ffffff;
+            color: black;
+            border: 1px solid #2563eb;
+            border-radius: 50px;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            width: 70%;
+            margin-top: auto;
+            margin-bottom: 10px;
+        }
+        .button:hover {
+            background-color: #2563eb;
+            color: white;
+        }
+  </style>
+</head>
+<body>
+
+  <section class="donation-section">
+    <h2>Why Donate?</h2>
+
+    <div class="highlight">
+      <p><strong>Your support changes lives.</strong> Every coin you give helps us bring clean water, education, food, and hope to those who need it most. Together, we make a real, lasting impact.</p>
+    </div>
+    
+    <h2>Where the Money Goes</h2>
+    <div class="highlight">
+    <p>We believe in full honesty and transparency. That’s why:</p>
+    <ul style="padding-left: 20px; color: #444;">
+      <li>✔ 90% of your donation goes directly to helping people.</li>
+      <li>✔ 10% helps cover things like transportation, tools, and staff.</li>
+      <li>✔ You can always ask for our financial reports.</li>
+    </ul>
+  </div>
+
+    <h2>Types of Donations</h2>
+    <div class="donation-types">
+      <div class="type-card">
+        <h3>🎁 One-Time Donation</h3>
+        <p>Give once, when you can. Every gift counts and brings change.</p>
+      </div>
+      <div class="type-card">
+        <h3>🔄 Monthly Support</h3>
+        <p>Help us every month. It keeps our mission strong and steady.</p>
+      </div>
+      <div class="type-card">
+        <h3>🎒 In-Kind Gifts</h3>
+        <p>Donate clothes, books, or other useful items. We pass them to those in need.</p>
+      </div>
+      <div class="type-card">
+        <h3>🏢 Corporate Sponsorship</h3>
+        <p>Companies can partner with us, support the community, and grow their positive image.</p>
+      </div>
+    </div>
+    <header>
+      <h1>Donate Channel</h1>
+      <p>This is our method used to donate to us</p>
+  </header>
+
+  <main>
+      <div class="card">
+          <h2 style="background-color: orangered;">Credit Card</h2>
+          <img src="../../static/images/visaCard.jpg" alt="PayPal">
+          <button class="button">Select</button>
+      </div>
+      <div class="card">
+          <h2 style="background-color:midnightblue">PayPal</h2>
+          <img src="../../static/images/paypal.png" alt="PayPal">
+          <button class="button">Select</button>
+      </div>
+      <div class="card">
+          <h2 style="background-color: #2563eb;">Bank Account</h2>
+          <i class="fa-solid fa-building-columns" style="background-color: aqua; border-radius: 50%;" ></i>
+          <button class="button">Select</button>
+      </div>
+      <div class="card">
+          <h2 style="background-color: yellow; color: black;">MTN MoMo</h2>
+          <img src="../../static/images/mtnpay.jpg" alt="MTN MoMo" style="border-radius: 0%;">
+          <button class="button">Select</button>
+      </div>
+      <div class="card">
+          <h2 style="background-color: red;">Airtel Money</h2>
+          <img src="../../static/images/aitelpay.png" alt="Airtel Money">
+          <button class="button">Select</button>
+      </div>
+  </main>
+  </section>
+
+</body>
+</html>
+  
+  {% endblock %}

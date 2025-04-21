@@ -1,10 +1,123 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+﻿{% extends "base.html" %}
+{# Transparency & Impact page. Uses internal CSS for styling. #}
 
-</body>
-</html>
+{% block content %}
+<style>
+  main {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+    margin: 0;
+    padding: 0 40px 20px 60px;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 2.8em;
+    color: #0056b3;
+  }
+
+  .subtitle {
+    text-align: center;
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 50px;
+  }
+
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    flex: 1 1 300px;
+    padding: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .card h3 {
+    margin-top: 0;
+    color: #0077cc;
+    font-size: 1.3em;
+  }
+
+  .card p {
+    color: #555;
+    font-size: 0.95em;
+    margin-bottom: 20px;
+  }
+
+  .card a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .card a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .grid {
+      flex-direction: column;
+      gap: 30px;
+    }
+  }
+</style>
+
+<main>
+  <div class="container">
+    <h1>Transparency & Impact</h1>
+    <p class="subtitle">We value your trust. Here’s how we ensure responsible use of your donations.</p>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>📄 Annual Activity Reports</h3>
+        <p>Download detailed yearly updates of our work and milestones.</p>
+        <a href="/downloads/annual-reports" target="_blank">View Reports →</a>
+      </div>
+
+      <div class="card">
+        <h3>💰 Financial Reports & Budgets</h3>
+        <p>Understand how every donation is allocated and spent with care.</p>
+        <a href="/downloads/financial-reports" target="_blank">Check Financials →</a>
+      </div>
+
+      <div class="card">
+        <h3>🔍 External Audits</h3>
+        <p>See reports from independent auditors that confirm our integrity.</p>
+        <a href="/downloads/external-audits" target="_blank">Explore Audits →</a>
+      </div>
+
+      <div class="card">
+        <h3>📊 Measurable Impact Indicators</h3>
+        <p>Track clear, data-driven results of the support you provide.</p>
+        <a href="/impact" target="_blank">See Impact →</a>
+      </div>
+
+      <div class="card">
+        <h3>🎤 Testimonials from Beneficiaries</h3>
+        <p>Watch or read real stories from those who’ve benefited directly.</p>
+        <a href="{% url 'viewTestimonials'  %}" target="_blank">View Testimonials →</a>
+      </div>
+
+    </div>
+  </div>
+</main>
+{% endblock %}

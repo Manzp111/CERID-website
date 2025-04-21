@@ -12,7 +12,7 @@ def home(request):
 
 
 def donate(request):
-    return render(request,'homepages/donate.html')
+    return render(request,'homepages/donate1.html')
 
 
 def leaderTeam(request):
@@ -30,6 +30,16 @@ def cred(request):
 def contact(request):
     return render(request,'homepages/contact.html')
 
+
+def transparency(request):
+    return render(request,'homepages/transparency.html')
+
 def our_project(request):
     return render(request, 'our_project/index.html')
+
+
+def view_testmonials(request):
+    # testimonials = models.Testimonial.objects.all()
+    return render(request, 'otherLinks/transparency.html')
+
 
