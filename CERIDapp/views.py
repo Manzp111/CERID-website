@@ -42,4 +42,12 @@ def view_testmonials(request):
     # testimonials = models.Testimonial.objects.all()
     return render(request, 'otherLinks/transparency.html')
 
+def partner(request):
+    return render(request, 'aboutusPage/paterners.html')
+
+def document(request):
+    return render(request, 'aboutusPage/documents.html')
+
+
+
 

@@ -14,6 +14,10 @@
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       overflow-x: hidden;
+      font-family: Arial, sans-serif;
+      padding: 0;
+      background-color: #f4f4f4;
+           
     }
 
     nav {
@@ -267,8 +271,8 @@
           <a href="{% url 'mission' %}">Our Mission</a>
           <a href="{% url 'leadership' %}">CELID Leadership</a>
           <a href="#">Our History</a>
-          <a href="#">Parteners</a>
-          <a href="#">Document</a>
+          <a href="{% url 'partners'  %}">Parteners</a>
+          <a href="{% url 'document' %}">Document</a>
         </div>
       </div>
 
