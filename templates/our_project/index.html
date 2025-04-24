@@ -22,7 +22,7 @@
     .hero {
         background: url('https://aditum.org/images/featured_image/1732015931Picture10.png') center/cover no-repeat;
         height: 60vh;
-        width: 100%;
+        width: 100vw;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -122,24 +122,47 @@
         margin-top: 15px;
     }
 
+    @media (max-width: 1024px) {
+        .hero {
+            height: 50vh;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+        }
+
+        .card img {
+            height: 160px;
+        }
+    }
+
     @media (max-width: 768px) {
         .hero h1 {
             font-size: 2rem;
         }
 
         .hero button {
-            padding: 10px 20px;
             font-size: 0.95rem;
+            padding: 10px 20px;
         }
 
         h2 {
             font-size: 1.8rem;
         }
+
+        .card img {
+            height: 150px;
+        }
+
+        .section {
+            padding: 50px 15px;
+        }
     }
 
     @media (max-width: 480px) {
         .hero {
-            height: 50vh;
+            height: 45vh;
+            padding: 30px 10px;
         }
 
         .hero h1 {
@@ -147,11 +170,36 @@
         }
 
         .hero button {
+            font-size: 0.9rem;
             padding: 8px 16px;
         }
 
         h2 {
             font-size: 1.5rem;
+        }
+
+        .icon-box img {
+            height: 50px;
+        }
+
+        .card img {
+            height: 140px;
+        }
+
+        .card-body {
+            padding: 15px;
+        }
+
+        .card-body h4 {
+            font-size: 1.1rem;
+        }
+
+        .card-body a {
+            font-size: 0.95rem;
+        }
+
+        ul {
+            padding-left: 20px;
         }
     }
 </style>

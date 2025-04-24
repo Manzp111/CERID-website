@@ -208,6 +208,13 @@
       color: #ccc;
       margin-top: 20px;
     }
+    @media (max-width: 700px) {
+  nav.navbar3r {
+    display: none;
+  }
+}
+
+# (bottom-nav on small screen like mobile phone)
 
     @media (max-width: 700px) {
       nav.navbar3r {
@@ -229,7 +236,7 @@
       }
 
       .nav-links {
-        display: none;
+        display: block;
         flex-direction: column;
         background-color: #0b3d91;
         position: absolute;
@@ -237,15 +244,23 @@
         right: 0;
         width: 60%;
         padding: 1rem;
-      }
+        display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 10px 0;
+  }
 
+  .social-links a {
+    font-size: 18px;
+  }
+}
       .nav-links.active {
         display: flex;
       }
       .social-links{
         display: none;
       }
-    }
+    
     .footer {
   background-color: #f8f8f8;
   padding: 40px 20px;
@@ -332,6 +347,50 @@ footer p {
   margin-top: 30px;
   font-size: 14px;
 }
+.bottom-nav {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #2E3192;
+    color: white;
+    padding: 8px 0;
+    z-index: 1001;
+    border-top: 1px solid #ccc;
+  }
+
+  .bottom-nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bottom-nav a i {
+    font-size: 20px;
+    margin-bottom: 2px;
+  }
+
+  .bottom-nav a:hover {
+    color: #D9C300;
+  }
+
+  /* Make room at bottom for nav */
+  .content {
+    padding-bottom: 70px;
+  }
+}
+
   </style>
 </head>
 <body>
