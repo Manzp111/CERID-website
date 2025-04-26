@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports & Insights - CERID</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        main {
+            padding: 40px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        h1 {
+            color: #2E3192;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #2E3192;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .download {
+            color: #2E3192;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .download:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Reports & Insights</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Press Release: BK Group Announces 2024 Q4FY Results</td>
+                    <td>2024</td>
+                    <td><a href="#" class="download">Download</a></td>
+                </tr>
+                <tr>
+                    <td>Credit Rating Announcement: BK Group Plc Announces Interim Dividend for Shareholders - November 2024</td>
+                    <td>2024</td>
+                    <td><a href="#" class="download">Download</a></td>
+                </tr>
+                <tr>
+                    <td>Treasury Newsletter: BK Group Plc Announces Q3 & 9M 2024 Results</td>
+                    <td>2024</td>
+                    <td><a href="#" class="download">Download</a></td>
+                </tr>
+                <tr>
+                    <td>Other Material: BK Group Announces H1 2024 Results</td>
+                    <td>2024</td>
+                    <td><a href="#" class="download">Download</a></td>
+                </tr>
+                <tr>
+                    <td>Investor Presentations: BK Group Announces Unaudited Financial Results - Q1 2024</td>
+                    <td>2024</td>
+                    <td><a href="#" class="download">Download</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>
+{% endblock %}

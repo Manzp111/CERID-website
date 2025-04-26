@@ -39,9 +39,9 @@ def our_project(request):
     return render(request, 'our_project/index.html')
 
 
-def view_testmonials(request):
+#def view_testmonials(request):
     # testimonials = models.Testimonial.objects.all()
-    return render(request, 'otherLinks/transparency.html')
+   # return render(request, 'otherLinks/transparency.html')
 
 def transparency(request):
     context = {
@@ -51,3 +51,11 @@ def transparency(request):
         'legal_docs': LegalDocument.objects.all(),
     }
     return render(request, 'trancy/transparency.html', context)
+
+def  partner(request):
+    return render(request, 'aboutusPage/paterners.html')
+
+def document(request):
+    return render(request, 'aboutusPage/documents.html')
+
+

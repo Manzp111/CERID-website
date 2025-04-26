@@ -1,0 +1,104 @@
+﻿{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Partners - CERID</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        main {
+            padding: 40px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        section {
+            margin-bottom: 40px;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #2E3192;
+            margin-bottom: 20px;
+            font-size: 3em;
+            text-transform: uppercase;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin: 0 0 20px;
+        }
+        .partners {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .partner {
+            flex: 1 1 200px;
+            max-width: 200px;
+            transition: transform 0.3s;
+        }
+        .partner img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        .partner:hover {
+            transform: scale(1.05);
+        }
+        @media (max-width: 768px) {
+            main {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2.5em;
+            }
+            .partners {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section id="partners">
+            <h1>Our Partners</h1>
+            <p>We are proud to collaborate with a variety of local and international organizations that support our mission.</p>
+            <div class="partners">
+                <div class="partner">
+                    <img src="https://via.placeholder.com/200?text=Partner+1" alt="Partner 1">
+                </div>
+                <div class="partner">
+                    <img src="https://via.placeholder.com/200?text=Partner+2" alt="Partner 2">
+                </div>
+                <div class="partner">
+                    <img src="https://via.placeholder.com/200?text=Partner+3" alt="Partner 3">
+                </div>
+                <div class="partner">
+                    <img src="https://via.placeholder.com/200?text=Partner+4" alt="Partner 4">
+                </div>
+                <div class="partner">
+                    <img src="https://via.placeholder.com/200?text=Partner+5" alt="Partner 5">
+                </div>
+                <div class="partner">
+                    <img src="https://via.placeholder.com/200?text=Partner+6" alt="Partner 6">
+                </div>
+                <!-- Add more partner images as needed -->
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+{% endblock %}
