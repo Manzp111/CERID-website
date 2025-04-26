@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from . import  models
-from .models import ImageSlider
+from .models import *
+
 
 
 def base(request):
@@ -42,4 +43,11 @@ def view_testmonials(request):
     # testimonials = models.Testimonial.objects.all()
     return render(request, 'otherLinks/transparency.html')
 
-
+def transparency(request):
+    context = {
+        'financial_reports': FinancialReport.objects.all(),
+        'impact_metrics': ImpactMetric.objects.all(),
+        'team': TeamMember.objects.all(),
+        'legal_docs': LegalDocument.objects.all(),
+    }
+    return render(request, 'trancy/transparency.html', context)
