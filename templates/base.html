@@ -8,7 +8,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <link rel="icon" href="../static/images/CERIDLOG.jpg" type="image/x-icon" style="border-radius: 50%">
 
-  
   <style>
     body {
       margin: 0;
@@ -18,45 +17,108 @@
       font-family: Arial, sans-serif;
       padding: 0;
       background-color: #f4f4f4;
-           
     }
 
     nav {
       background-color: #2E3192;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  top: 0;
-  position: sticky;
-  margin: 0 10% 0 15%;
-  width: 70%;
-  height: 60px;
-  z-index: 1000;
-  transition: width 0.3s ease, margin 0.3s ease;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      top: 0;
+      position: sticky;
+      margin: 0 10% 0 15%;
+      width: 70%;
+      height: 60px;
+      z-index: 1000;
+      transition: width 0.3s ease, margin 0.3s ease;
     }
-  .navbar-scrolled {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  right: 0;
-  /* left: 6px; */
-  /* margin-right: -20px!important; */
-}
 
+    .navbar-scrolled {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      right: 0;
+    }
+
+    /* Facebook-style Language Selector */
+    .fb-language-selector {
+      position: relative;
+      margin-left: auto;
+      margin-right: 20px;
+    }
+
+    .selected-language {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: white;
+      cursor: pointer;
+      padding: 5px 10px;
+      border-radius: 6px;
+      transition: background-color 0.2s;
+    }
+
+    .selected-language:hover {
+      background-color: rgba(255,255,255,0.1);
+    }
+
+    .selected-language i {
+      font-size: 18px;
+    }
+
+    .language-dropdown {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1), 0 8px 16px rgba(0,0,0,0.1);
+      width: 180px;
+      padding: 8px 0;
+      display: none;
+      z-index: 1000;
+    }
+
+    .language-dropdown.show {
+      display: block;
+    }
+
+    .language-option {
+      padding: 8px 16px;
+      cursor: pointer;
+      color: #050505;
+      font-size: 15px;
+    }
+
+    .language-option:hover {
+      background-color: #f2f2f2;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 700px) {
+      .fb-language-selector {
+        position: absolute;
+        top: 10px;
+        right: 60px;
+      }
+      
+      .language-dropdown {
+        right: -50px;
+      }
+    }
+
+    /* Rest of your existing CSS remains the same */
     .social-links{
       position: relative;
       text-align: center;
-      
     }
     .social-links a{
       color: #000;
-
     }
     .social-links a:hover{
       color: #D9C300;
     }
-
     .logo {
       font-size: 1.5rem;
       font-weight: bold;
@@ -67,32 +129,22 @@
       padding: 1px;
       left: 0;
     }
-  
-
     .logo .web_log {
-      
       width: 70px;
       height: 60px;
-       /* border: none; */
       border-radius: 0; 
-    
-
-     
     }
-
     .nav-links {
       display: inline-flex;
       align-items: center;
       gap: 1.5rem;
       width: 65%;
     }
-
     .nav-links a {
       color: white;
       text-decoration: none;
       font-weight: 500;
     }
-
     .nav-links a:hover {
       border-radius: 0.2em;
       border-top: 2px solid#D9C300;
@@ -104,48 +156,71 @@
       min-height: 100vh; 
       display: flex;
     }
+    /* Improved Dropdown Styles */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
 
-    .dropdown {
-      position: relative;
-    }
+.dropdown-button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 0;
+}
 
-    .dropdown-button {
-      background-color: #0B3D91; 
-      border: none;
-      color: white;
-      cursor: pointer;
-      font-size: 1rem;
-      display: flex;
-      align-items: center;
-    }
+.dropdown-button:hover {
+  border-radius: 0.2em;
+  border-top: 2px solid #D9C300;
+}
 
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: white;
-      color: black;
-      min-width: 200px;
-      z-index: 1;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      border-radius: 5px;
-      margin-top: 5px; /* Spacing from the button */
-    }
+.dropdown-arrow {
+  transition: transform 0.3s ease;
+  font-size: 1rem;
+}
 
-    .dropdown-content a {
-      padding: 10px;
-      display: block;
-      color: #0b3d91;
-      text-decoration: none;
-    }
+.dropdown.active .dropdown-arrow {
+  transform: rotate(180deg);
+}
 
-    .dropdown-content a:hover {
-      background-color: #f0f0f0;
-    }
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 200px;
+  z-index: 1001;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  margin-top: 8px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
 
-    .dropdown.active .dropdown-content {
-      display: block;
-    }
+.dropdown.active .dropdown-content {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
 
+.dropdown-content a {
+  padding: 12px 16px;
+  display: block;
+  color: #0b3d91;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #f5f5f5;
+  color: #2E3192;
+}
     .hamburger {
       display: none;
       font-size: 1.8rem;
@@ -156,42 +231,33 @@
       color: white;
       padding: 40px 5vw 15px;
       margin-top: 60px;
-    
     }
-
     .footer-container {
       display: flex;
       flex-wrap: wrap;
       gap: 30px;
     }
-
     .footer-section {
       flex: 1 1 250px;
     }
-
     .footer-section h4 {
       color: #ffcc00;
       margin-bottom: 15px;
     }
-
     .footer-section ul {
       list-style: none;
       padding: 0;
     }
-
     .footer-section ul li {
       margin-bottom: 10px;
     }
-
     .footer-section ul li a {
       color: #ddd;
       text-decoration: none;
     }
-
     .footer-section ul li a:hover {
       text-decoration: underline;
     }
-
     .map-container {
       width: 100%;
       height: 250px;
@@ -199,44 +265,31 @@
       overflow: hidden;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
-
     .footer-bottom {
       text-align: center;
       padding: 15px 0 5px;
-      /* background-color: #002244; */
       font-size: 0.9em;
       color: #ccc;
       margin-top: 20px;
     }
     @media (max-width: 700px) {
-  nav.navbar3r {
-    display: none;
-  }
-}
-
-/* (bottom-nav on small screen like mobile phone) */
-
-    @media (max-width: 700px) {
       nav.navbar3r {
-    position: fixed !important;
-    top: 0;
-    left: 0;
-    width: 100% !important;
-    margin: 0 !important;
-    z-index: 1000;
-  }
-
-  .content {
-    margin-top: 60px;
-  }
-  
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        margin: 0 !important;
+        z-index: 1000;
+      }
+      .content {
+        margin-top: 60px;
+      }
       .hamburger {
         display: block;
         margin-right: 70px;
       }
-
       .nav-links {
-        display: block;
+        display: flex;
         flex-direction: column;
         background-color: #0b3d91;
         position: absolute;
@@ -244,153 +297,52 @@
         right: 0;
         width: 60%;
         padding: 1rem;
-        display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin: 10px 0;
-  }
-
-  .social-links a {
-    font-size: 18px;
-  }
-}
+        justify-content: center;
+        gap: 10px;
+        margin: 10px 0;
+      }
+      .social-links a {
+        font-size: 18px;
+      }
       .nav-links.active {
         display: flex;
       }
       .social-links{
         display: none;
       }
-    
-    .footer {
-  background-color: #f8f8f8;
-  padding: 40px 20px;
-    color: #003300;
-}
-
-.footer-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.footer-section {
-  flex: 1;
-  min-width: 200px;
-  margin: 20px;
-}
-
-.footer-section h3 {
-  font-weight: bold;
-  color: #ffcc00;;
-  margin-bottom: 10px;
-}
-
-.footer-section h4 {
-  margin-top: 20px;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.footer-section ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-section ul li {
-  margin-bottom: 8px;
-}
-
-.footer-section a {
-  color: #003300;
-  text-decoration: none;
-}
-
-.footer-section a:hover {
-  text-decoration: underline;
-}
-
-.social-icons a {
-  color: #003300;
-  margin-right: 10px;
-  font-size: 18px;
-}
-
-.form input {
-  width: 100%;
-  padding: 10px;
-  margin: 8px 0;
-  border: 1px solid #ccc;
-  border-radius: 20px;
-  font-size: 14px;
-}
-
-.form button {
-  width: 100%;
-  padding: 12px;
-  background-color: #ffcc00;
-  border: none;
-  border-radius: 25px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.form button:hover {
-  background-color: #0B3D91;
-  color: #fff;
-}
-
-footer p {
-  text-align: center;
-  margin-top: 30px;
-  font-size: 14px;
-}
-.bottom-nav {
-  display: none;
-}
-
-@media (max-width: 700px) {
-  .bottom-nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #2E3192;
-    color: white;
-    padding: 8px 0;
-    z-index: 1001;
-    border-top: 1px solid #ccc;
-  }
-
-  .bottom-nav a {
-    text-decoration: none;
-    color: white;
-    font-size: 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .bottom-nav a i {
-    font-size: 20px;
-    margin-bottom: 2px;
-  }
-
-  .bottom-nav a:hover {
-    color: #D9C300;
-  }
-
-  /* Make room at bottom for nav */
-  .content {
-    padding-bottom: 70px;
-  }
-}
-
+      .bottom-nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #2E3192;
+        color: white;
+        padding: 8px 0;
+        z-index: 1001;
+        border-top: 1px solid #ccc;
+      }
+      .bottom-nav a {
+        text-decoration: none;
+        color: white;
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .bottom-nav a i {
+        font-size: 20px;
+        margin-bottom: 2px;
+      }
+      .bottom-nav a:hover {
+        color: #D9C300;
+      }
+      .content {
+        padding-bottom: 70px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -399,67 +351,69 @@ footer p {
     <a href="#"><i class='bx bxl-instagram'></i></a>
     <a href="#"><i class='bx bxl-twitter'></i></a>
     <a href="#"><i class='bx bxl-linkedin-square'></i></a>
-</div>
+  </div>
 
   <nav class="navbar3r" id="navbar3r">
-
-  
     <div class="logo">
-     
       <img src="{% static 'images/CERIDLOG.jpg' %}" alt="logo" class="web_log">
     </div>
 
     <div class="hamburger" onclick="toggleMenu()">☰</div>
 
     <div class="nav-links" id="navLinks">
-      <a href="{% url 'home' %}" id="nav-home">Home</a>
-
+      <a href="{% url 'home' %}" id="nav-home" data-translate="home">Home</a>
       <div class="dropdown">
-        <button class="dropdown-button" onclick="toggleDropdown()">About Us &#9662;</button>
+        <button class="dropdown-button" data-translate="about">About Us &#9662;</button>
         <div class="dropdown-content" id="dropdownContent">
-          <a href="{% url 'mission' %}">Our Mission</a>
-          <a href="{% url 'leadership' %}">CELID Leadership</a>
-          <a href="#">Our History</a>
-          <a href="{% url 'partners'  %}">Parteners</a>
-          <a href="{% url 'document' %}">Document</a>
+          <a href="{% url 'mission' %}" data-translate="mission">Our Mission</a>
+          <a href="{% url 'leadership' %}" data-translate="leadership">CELID Leadership</a>
+          <a href="#" data-translate="history">Our History</a>
+          <a href="{% url 'partners' %}" data-translate="partners">Partners</a>
+          <a href="{% url 'document' %}" data-translate="document">Document</a>
         </div>
       </div>
+      <a href="{% url 'our_project' %}" id="nav-projects" data-translate="projects">Our Projects</a>
+      <a href="{% url 'transparency' %}" id="nav-transparency" data-translate="transparency">Transparency</a>
+      <a href="{% url 'donate' %}" id="nav-donate" data-translate="donate">Donate</a>
+      <a href="{% url 'contact' %}" id="nav-contact" data-translate="contact">Contact</a>
+    </div>
 
-
-      <a href="{% url 'our_project' %}" id="nav-projects">Our Projects</a>
-      <!-- <a href="{% url 'donate' %}" id="nav-donate">Donate</a> -->
-      <a href="{% url 'transparency' %}" id="nav-transparency">Transparency</a>
-      <a href="{% url 'donate' %}" id="nav-donate">Donate</a>
-      <!-- <a href="#transparency" id="nav-transparency">Transparency</a> -->
-      <a href="{% url 'contact'  %}" id="nav-contact">Contact</a>
+    <div class="fb-language-selector">
+      <div class="selected-language">
+        <i class='bx bx-globe'></i>
+        <span>EN</span>
+        <i class='bx bx-chevron-down'></i>
+      </div>
+      <div class="language-dropdown">
+        <div class="language-option" data-lang="en">English</div>
+        <div class="language-option" data-lang="fr">Français</div>
+        <div class="language-option" data-lang="rw">Kinyarwanda</div>
+      </div>
     </div>
   </nav>
   
   <main class="content">
     {% block content %}
-
     <!-- content -->
-     
     {% endblock %}
   </main>
+
   <footer>
     <div class="footer-container">
       <div class="footer-section">
         <h4>About CERID</h4>
         <p>CERID is committed to positive change through education, health and empowerment. Transparency and impact drive our actions every day.</p>
       </div>
-
       <div class="footer-section">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="#">Home</a></li>
+          <li><a href="{% url 'home' %}">Home</a></li>
           <li><a href="#">About Us</a></li>
           <li><a href="{% url 'our_project' %}">Our Projects</a></li>
           <li><a href="{% url 'donate' %}"><i class="fa-solid fa-hand-holding-dollar"></i>Donate</a></li>
           <li><a href="{% url 'contact' %}">Contact</a></li>
         </ul>
       </div>
-
       <div class="footer-section">
         <h3>Site Map</h3>
         <ul>
@@ -470,7 +424,6 @@ footer p {
           <li><a href="#">Connect With Us</a></li>
         </ul>
       </div>
-
       <div class="footer-section">
         <h4>Our Location (UR CST)</h4>
         <div class="map-container">
@@ -482,14 +435,101 @@ footer p {
         </div>
       </div>
     </div>
-
     <div class="footer-bottom">
       &copy; Engineer Manzp.
     </div>
-</footer>
+  </footer>
 
-       
   <script>
+    // Navbar translations
+    const translations = {
+      'en': {
+        'home': 'Home',
+        'about': 'About Us',
+        'projects': 'Our Projects',
+        'transparency': 'Transparency',
+        'donate': 'Donate',
+        'contact': 'Contact',
+        'mission': 'Our Mission',
+        'leadership': 'CELID Leadership',
+        'history': 'Our History',
+        'partners': 'Partners',
+        'document': 'Document'
+      },
+      'fr': {
+        'home': 'Accueil',
+        'about': 'À propos',
+        'projects': 'Nos Projets',
+        'transparency': 'Transparence',
+        'donate': 'Faire un don',
+        'contact': 'Contact',
+        'mission': 'Notre Mission',
+        'leadership': 'Direction CELID',
+        'history': 'Notre Histoire',
+        'partners': 'Partenaires',
+        'document': 'Document'
+      },
+      'rw': {
+        'home': 'Ahabanza',
+        'about': 'Ibyerekeye',
+        'projects': 'Ibikorwa',
+        'transparency': 'Ubwirabire',
+        'donate': 'Tanga',
+        'contact': 'Twandikire',
+        'mission': 'Intego yacu',
+        'leadership': 'Abayobozi ba CELID',
+        'history': 'Amateka yacu',
+        'partners': 'Abafatanyabikorwa',
+        'document': 'Inyandiko'
+      }
+    };
+
+    // Language selector functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const languageSelector = document.querySelector('.fb-language-selector');
+      const selectedLanguage = languageSelector.querySelector('.selected-language');
+      const languageDropdown = languageSelector.querySelector('.language-dropdown');
+      
+      // Toggle dropdown
+      selectedLanguage.addEventListener('click', function(e) {
+        e.stopPropagation();
+        languageDropdown.classList.toggle('show');
+      });
+      
+      // Close when clicking outside
+      document.addEventListener('click', function() {
+        languageDropdown.classList.remove('show');
+      });
+      
+      // Language selection
+      document.querySelectorAll('.language-option').forEach(option => {
+        option.addEventListener('click', function() {
+          const lang = this.dataset.lang;
+          translateNavbar(lang);
+          selectedLanguage.querySelector('span').textContent = lang.toUpperCase();
+          languageDropdown.classList.remove('show');
+          localStorage.setItem('preferredLang', lang);
+        });
+      });
+      
+      // Load preferred language if set
+      const savedLang = localStorage.getItem('preferredLang');
+      if (savedLang) {
+        translateNavbar(savedLang);
+        selectedLanguage.querySelector('span').textContent = savedLang.toUpperCase();
+      }
+    });
+
+    function translateNavbar(lang) {
+      document.querySelectorAll('[data-translate]').forEach(el => {
+        const key = el.dataset.translate;
+        if (translations[lang] && translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+    }
+
+    // Existing functions
     function toggleMenu() {
       const navLinks = document.getElementById("navLinks");
       navLinks.classList.toggle("active");
@@ -500,7 +540,6 @@ footer p {
       dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
     }
 
-    // Close the dropdown if clicked outside
     window.onclick = function(event) {
       if (!event.target.matches('.dropdown-button')) {
         const dropdowns = document.getElementsByClassName("dropdown-content");
@@ -510,51 +549,60 @@ footer p {
       }
     };
 
+    window.addEventListener('scroll', function() {
+      var navbar = document.getElementById('navbar3r');
+      if (window.scrollY > 50) {
+        navbar.classList.add('navbar-scrolled');
+      } else {
+        navbar.classList.remove('navbar-scrolled');
+      }
+    });
 
-  window.addEventListener('scroll', function () {
-    var navbar = document.getElementById('navbar3r');
-    
+    document.getElementById('partnerForm')?.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value.trim();
 
-    if (window.scrollY > 50) {
-      navbar.classList.add('navbar-scrolled');
-    } 
-    else {
-      navbar.classList.remove('navbar-scrolled');
+      if (!name || !email) {
+        alert("Please fill out all required fields.");
+        return;
+      }
+
+      console.log("Form submitted:", { name, email, subject });
+      alert("Thank you for reaching out! We'll get back to you soon.");
+      this.reset();
+    });
+    // Toggle About Us dropdown
+function toggleAboutDropdown() {
+  const dropdown = document.getElementById("aboutDropdown");
+  dropdown.classList.toggle("active");
+  
+  // Close other dropdowns if open
+  document.querySelectorAll('.dropdown').forEach(otherDropdown => {
+    if (otherDropdown !== dropdown && otherDropdown.classList.contains('active')) {
+      otherDropdown.classList.remove('active');
     }
   });
+}
 
-  document.getElementById('partnerForm').addEventListener('submit', function (e) {
-  e.preventDefault();
-
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const subject = document.getElementById('subject').value.trim();
-
-  if (!name || !email) {
-    alert("Please fill out all required fields.");
-    return;
+// Close dropdown when clicking outside
+document.addEventListener('click', function(event) {
+  if (!event.target.closest('.dropdown')) {
+    document.querySelectorAll('.dropdown').forEach(dropdown => {
+      dropdown.classList.remove('active');
+    });
   }
-
-  // Simulate sending the form
-  console.log("Form submitted:", { name, email, subject });
-  alert("Thank you for reaching out! We'll get back to you soon.");
-
-  this.reset();
 });
 
-</script>
-<script>
-  window.addEventListener('scroll', function() {
-    var footer = document.querySelector('footer');
-
-    if (window.scrollY + window.innerHeight >= document.body.offsetHeight) {
-      footer.style.position = 'absolute';
-      footer.style.bottom = '0';
-    } else {
-      footer.style.position = 'relative';
-    }
+// Close dropdown when clicking on a dropdown item
+document.querySelectorAll('.dropdown-content a').forEach(item => {
+  item.addEventListener('click', () => {
+    document.querySelectorAll('.dropdown').forEach(dropdown => {
+      dropdown.classList.remove('active');
+    });
   });
-</script>
-
+});
+  </script>
 </body>
 </html>
