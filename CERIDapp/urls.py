@@ -15,7 +15,7 @@ urlpatterns=[
     path("contact/",views.contact,name='contact'),
     path("transparency/",views.transparency,name='transparency'),
     path("our_project/",views.our_project, name="our_project"),
-    path('testemonials/video/',views.view_testmonials,name='viewTestimonials'),
+    # path('testemonials/video/',views.view_testmonials,name='viewTestimonials'),
     path('paterners/',views.partner,name='partners'),
     path('document/',views.document,name='document'),
 
