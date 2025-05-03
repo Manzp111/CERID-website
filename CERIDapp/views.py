@@ -35,9 +35,6 @@ def contact(request):
 def transparency(request):
     return render(request,'homepages/transparency.html')
 
-def our_project(request):
-    return render(request, 'our_project/index.html')
-
 
 #def view_testmonials(request):
     # testimonials = models.Testimonial.objects.all()
@@ -59,3 +56,21 @@ def document(request):
     return render(request, 'aboutusPage/documents.html')
 
 
+
+def health_research_home(request):
+    hero = HeroSection.objects.filter(is_active=True).first()
+    vision_items = VisionItem.objects.all()
+    ongoing_projects = Project.objects.filter(status='ongoing')
+    completed_projects = Project.objects.filter(status='completed')
+    
+    context = {
+        'hero': hero,
+        'vision_items': vision_items,
+        'ongoing_projects': ongoing_projects,
+        'completed_projects': completed_projects,
+    }
+    return render(request, 'our_project/index.html', context)
+
+def project_detail(request, slug):
+    project = get_object_or_404(Project, slug=slug)
+    return render(request, 'our_project/index.html', {'project': project})

@@ -1,5 +1,6 @@
 from django.contrib import admin
-from CERIDapp import models
+from CERIDapp import models   
+from .models import HeroSection, VisionItem, Project
 
 
 @admin.register(models.LeaderTeam)
@@ -30,3 +31,21 @@ class TeamMemberAdmin(admin.ModelAdmin):
 @admin.register(models.LegalDocument)
 class LegalDocumentAdmin(admin.ModelAdmin):
     list_display = ('name',)
+
+
+@admin.register(HeroSection)
+class HeroSectionAdmin(admin.ModelAdmin):
+    list_display = ('title', 'is_active')
+    list_editable = ('is_active',)
+
+@admin.register(VisionItem)
+class VisionItemAdmin(admin.ModelAdmin):
+    list_display = ('title', 'order')
+    list_editable = ('order',)
+
+@admin.register(Project)
+class ProjectAdmin(admin.ModelAdmin):
+    list_display = ('title', 'status', 'completion_date')
+    list_filter = ('status',)
+    search_fields = ('title', 'description')
+    prepopulated_fields = {'slug': ('title',)}

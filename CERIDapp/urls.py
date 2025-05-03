@@ -14,12 +14,11 @@ urlpatterns=[
     path("cred/",views.cred,name='cred'),
     path("contact/",views.contact,name='contact'),
     path("transparency/",views.transparency,name='transparency'),
-    path("our_project/",views.our_project, name="our_project"),
     # path('testemonials/video/',views.view_testmonials,name='viewTestimonials'),
     path('paterners/',views.partner,name='partners'),
     path('document/',views.document,name='document'),
-
-
+    path('our_project/', views.health_research_home, name='health_research_home'),
+    path('our_project/projects/<slug:slug>/', views.project_detail, name='project_detail'),
 ] 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
