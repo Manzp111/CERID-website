@@ -552,7 +552,7 @@
     <div class="nav-links" id="navLinks">
       <a href="{% url 'home' %}" id="nav-home" data-translate="home">Home</a>
       <div class="dropdown">
-        <button class="dropdown-button" data-translate="about">About Us &#9662;</button>
+        <button class="dropdown-button" data-translate="about" onclick=toggleDropdown() >About Us &#9662;</button>
         <div class="dropdown-content" id="dropdownContent">
           <a href="{% url 'mission' %}" data-translate="mission">Our Mission</a>
           <a href="{% url 'leadership' %}" data-translate="leadership">CELID Leadership</a>
