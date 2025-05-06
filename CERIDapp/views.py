@@ -1,6 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from . import  models
-from .models import *
+from .models import ImageSlider, VisionItem,HeroSection, Project
+from django.shortcuts import get_object_or_404
+from django.contrib.auth.decorators import login_required
+from . forms import MessageForm
+from django.core.mail import send_mail
+
+from django.urls import reverse
+from django.conf import settings
+from django.http import HttpResponse
 
 
 
@@ -29,7 +37,37 @@ def cred(request):
 
 
 def contact(request):
-    return render(request,'homepages/contact.html')
+    if request.method == 'POST':
+        form = MessageForm(request.POST)
+        if form.is_valid():
+            message_instance = form.save()
+
+            
+            subject = "Thank you for contacting us!"
+            message_body = f"""
+            Dear {message_instance.first_name},
+
+            Thank you for reaching out to us. We have received your message and will get back to you soon!
+
+            Here is a copy of your message:
+            ----------------------------------------
+            {message_instance.message}
+            ----------------------------------------
+
+            Best regards,
+            CERID Team
+            """
+
+            from_email = 'gilbertnshimyimana11@gmail.com'  
+            recipient_list = [message_instance.email]  
+
+            send_mail(subject, message_body, from_email, recipient_list, fail_silently=False)
+
+            return redirect('home')
+    else:
+        form = MessageForm()
+    return render(request, 'homepages/contact.html', {'form': form})
+
 
 
 def transparency(request):
@@ -41,11 +79,17 @@ def transparency(request):
    # return render(request, 'otherLinks/transparency.html')
 
 def transparency(request):
+    # Fetching data from the models
+    FinancialReport = models.FinancialReport.objects.all()
+    ImpactMetric = models.ImpactMetric.objects.all()
+    TeamMember = models.TeamMember.objects.all()
+    LegalDocument = models.LegalDocument.objects.all()
+
     context = {
-        'financial_reports': FinancialReport.objects.all(),
-        'impact_metrics': ImpactMetric.objects.all(),
-        'team': TeamMember.objects.all(),
-        'legal_docs': LegalDocument.objects.all(),
+        'financial_reports': FinancialReport,
+        'impact_metrics': ImpactMetric,
+        'team': TeamMember,
+        'legal_docs': LegalDocument,
     }
     return render(request, 'trancy/transparency.html', context)
 
@@ -58,7 +102,8 @@ def document(request):
 
 
 def health_research_home(request):
-    hero = HeroSection.objects.filter(is_active=True).first()
+
+    hero =HeroSection.objects.filter(is_active=True).first()
     vision_items = VisionItem.objects.all()
     ongoing_projects = Project.objects.filter(status='ongoing')
     completed_projects = Project.objects.filter(status='completed')
