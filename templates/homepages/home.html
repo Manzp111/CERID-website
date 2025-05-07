@@ -73,18 +73,6 @@
             background-color: #bda600;
         }
 
-        .text {
-            color: yellow;
-            font-size: 15px;
-            padding: 8px 12px;
-            position: absolute;
-            bottom: 8px;
-            width: 100%;
-            text-align: center;
-            background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 5px;
-        }
-
         .fade {
             animation-name: fade;
             animation-duration: 1.5s;
@@ -93,6 +81,66 @@
         @keyframes fade {
             from { opacity: .4; }
             to { opacity: 1; }
+        }
+
+        .cta-header {
+            text-align: center;
+            margin: 40px 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .cta-section {
+            display: flex;
+            justify-content: space-between;
+            padding: 40px 20px;
+            background-color: #f4f4f4;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        .cta-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            width: 30%;
+        }
+
+        .cta-card i {
+            font-size: 50px;
+            color: #D9C300;
+        }
+
+        .cta-card h3 {
+            margin: 15px 0;
+        }
+
+        .cta-button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #D9C300;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #bda600;
+        }
+
+        .info-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .info-section p {
+            margin: 10px 0;
+            font-size: 16px;
         }
 
         .row {
@@ -127,6 +175,16 @@
         }
 
         @media screen and (max-width: 600px) {
+            .cta-card {
+                width: 90%;
+                margin-bottom: 20px;
+            }
+
+            .cta-section {
+                flex-direction: column;
+                align-items: center;
+            }
+
             .column {
                 width: 100%;
                 display: block;
@@ -146,7 +204,6 @@
         {% for slide in slides %}
         <div class="mySlides fade">
             <img src="{{ slide.image.url }}" alt="Slide">
-            <!-- <div class="text">{{ slide.caption }}</div> -->
         </div>
         {% endfor %}
 
@@ -163,8 +220,8 @@ Développement Durable
         <a class="prev" href="{% url 'donate' %}"><i class="fa-solid fa-hand-holding-dollar"></i>Donate</a>
     </div>
 
-    <!-- Counters -->
-    <div class="row" id="counter-section">
+     <!-- Counters -->
+     <div class="row" id="counter-section">
         <div class="column">
             <div class="card">
                 <p><i class="fa fa-user"></i></p>
@@ -196,6 +253,45 @@ Développement Durable
                 <p>Meetings</p>
             </div>
         </div>
+    </div>
+    <!-- Call to Action Header -->
+    <div class="cta-header">
+        JOIN THE MOVEMENT
+    </div>
+
+    <!-- Call to Action Section -->
+    <div class="cta-section">
+        <div class="cta-card">
+            <i class="fa fa-share-alt"></i>
+            <h3>Spread the Word</h3>
+            <p>Spread the word on Facebook, Twitter, and Instagram.</p>
+            <button class="cta-button">Share</button>
+        </div>
+
+        <div class="cta-card">
+            <i class="fa fa-hand-holding-heart"></i>
+            <h3>Your Gift Has the Power</h3>
+            <p>Your donations help us save lives.</p>
+            <button class="cta-button">Donate</button>
+        </div>
+
+        <div class="cta-card">
+            <i class="fa fa-envelope"></i>
+            <h3>Receive Updates</h3>
+            <p>Get the latest updates in your inbox.</p>
+            <button class="cta-button">Sign Up</button>
+        </div>
+    </div>
+
+    <!-- Info Section -->
+    <div class="info-section">
+        <p>Stay informed about Partners in Health's work to provide quality health care for everyone.</p>
+        <button class="cta-button">Sign Up for Updates</button>
+    </div>
+
+    <div class="info-section" style="margin-top: 40px;">
+        <h2>JOIN THE MOVEMENT TO MAKE HEALTH CARE ACCESSIBLE FOR EVERYONE</h2>
+        <a class="prev" href="{% url 'donate' %}"><button class="cta-button">DONATE NOW</button></a>
     </div>
 </main>
 
