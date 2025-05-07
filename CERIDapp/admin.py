@@ -49,3 +49,11 @@ class ProjectAdmin(admin.ModelAdmin):
     list_filter = ('status',)
     search_fields = ('title', 'description')
     prepopulated_fields = {'slug': ('title',)}
+
+@admin.register(models.Message)
+class MessageAdmin(admin.ModelAdmin):
+    list_display = ('id','first_name', 'last_name', 'email', 'phone', 'message')
+    search_fields = ('first_name', 'last_name')
+    list_filter = ('email',)
+    list_per_page = 10
+    ordering = ('-id',)

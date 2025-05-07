@@ -10,9 +10,10 @@
     <title>Automatic Slideshow</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+
     <style>
         main {
-            margin-top: -10%;
+            margin-top: -13%;
         }
 
         .slideshow-container {
@@ -279,14 +280,14 @@ Développement Durable
             <i class="fa fa-envelope"></i>
             <h3>Receive Updates</h3>
             <p>Get the latest updates in your inbox.</p>
-            <button class="cta-button">Sign Up</button>
+            <button class="cta-button" href="{% url 'contact' %}">Sign Up</button>
         </div>
     </div>
 
     <!-- Info Section -->
     <div class="info-section">
         <p>Stay informed about Partners in Health's work to provide quality health care for everyone.</p>
-        <button class="cta-button">Sign Up for Updates</button>
+        <button class="cta-button" >Sign Up for Updates</button>
     </div>
 
     <div class="info-section" style="margin-top: 40px;">
@@ -294,6 +295,7 @@ Développement Durable
         <a class="prev" href="{% url 'donate' %}"><button class="cta-button">DONATE NOW</button></a>
     </div>
 </main>
+<script src="{% static 'js/home.js' %}"></script>
 
 <!-- Slideshow JS -->
 <script>
