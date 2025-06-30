@@ -10,6 +10,13 @@
   <link rel="stylesheet" href="{% static 'css/base/base.css' %}">
   <script src="{% static 'js/base/base.js' %}"></script>
 
+  <style>
+    .drop{
+      position: relative;
+      display: inline-block;
+    }
+  </style>
+
 
 </head>
 <body>
@@ -30,8 +37,10 @@
     <div class="nav-links" id="navLinks">
       <a href="{% url 'home' %}" id="nav-home" data-translate="home">Home</a>
       <div class="dropdown">
-        <button class="dropdown-button" onclick="toggleDropdown()">About Us &#9662;</button>
+        <button class="dropdown-button drop" data-translate="about">About Us</button>
+        <button class="dropdown-button drop" onclick="toggleDropdown()">&#9662;</button>
         <div class="dropdown-content" id="dropdownContent">
+          
           <a href="{% url 'mission' %}" data-translate="mission">Our Mission</a>
           <a href="{% url 'leadership' %}" data-translate="leadership">CELID Leadership</a>
           <a href="#" data-translate="history">Our History</a>

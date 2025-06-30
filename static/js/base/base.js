@@ -10,7 +10,8 @@ const translations = {
       'leadership': 'CELID Leadership',
       'history': 'Our History',
       'partners': 'Partners',
-      'document': 'Document'
+      'document': 'Document',
+      
     },
     'fr': {
       'home': 'Accueil',
