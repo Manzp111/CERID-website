@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automatic Slideshow</title>
+    <title>Home</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 
@@ -212,13 +212,13 @@
 
     <!-- Static Caption Section -->
     <div class="slide-caption">
-        <pre id="typewriter-text">
+        <pre id="typewriter-text" data-translate="welcome_text">
 Welcome to Our  
 Centre de Recherches
 Interdisciplinaires pour le 
 Développement Durable
         </pre>
-        <a class="prev" href="{% url 'donate' %}"><i class="fa-solid fa-hand-holding-dollar"></i>Donate</a>
+        <a class="prev" href="{% url 'donate' %}" data-translate="donate"><i class="fa-solid fa-hand-holding-dollar" ></i>Donate</a>
     </div>
 
      <!-- Counters -->
@@ -227,15 +227,15 @@ Développement Durable
             <div class="card">
                 <p><i class="fa fa-user"></i></p>
                 <h3 class="counter" data-target="11">0+</h3>
-                <p>Partners</p>
+                <p data-translate="partners_count">Partners</p>
             </div>
         </div>
 
-        <div class="column">
+        <div class="column"> 
             <div class="card">
                 <p><i class="fa fa-check"></i></p>
                 <h3 class="counter" data-target="55">0+</h3>
-                <p>Projects</p>
+                <p data-translate="projects_count">Projects</p> 
             </div>
         </div>
 
@@ -243,7 +243,7 @@ Développement Durable
             <div class="card">
                 <p><i class="fa fa-smile"></i></p>
                 <h3 class="counter" data-target="100">0+</h3>
-                <p>Happy Clients</p>
+                <p data-translate="clients_count">Happy Clients</p>
             </div>
         </div>
 
@@ -251,12 +251,12 @@ Développement Durable
             <div class="card">
                 <p><i class="fa fa-coffee"></i></p>
                 <h3 class="counter" data-target="100">0+</h3>
-                <p>Meetings</p>
+                <p data-translate="meetings_count">Meetings</p>
             </div>
         </div>
     </div>
     <!-- Call to Action Header -->
-    <div class="cta-header">
+    <div class="cta-header" data-translate="join_header">
         JOIN THE MOVEMENT
     </div>
 
@@ -264,35 +264,35 @@ Développement Durable
     <div class="cta-section">
         <div class="cta-card">
             <i class="fa fa-share-alt"></i>
-            <h3>Spread the Word</h3>
-            <p>Spread the word on Facebook, Twitter, and Instagram.</p>
-            <button class="cta-button">Share</button>
+            <h3 data-translate="spread_word">Spread the Word</h3>
+            <p data-translate="spread_text">Spread the word on Facebook, Twitter, and Instagram.</p>
+            <button class="cta-button" data-translate="share">Share</button>
         </div>
 
         <div class="cta-card">
             <i class="fa fa-hand-holding-heart"></i>
-            <h3>Your Gift Has the Power</h3>
-            <p>Your donations help us save lives.</p>
-            <button class="cta-button">Donate</button>
+            <h3 data-translate="your_gift">Your Gift Has the Power</h3>
+            <p data-translate="gift_text">Your donations help us save lives.</p>
+            <button class="cta-button" data-translate="donate">Donate</button>
         </div>
 
         <div class="cta-card">
             <i class="fa fa-envelope"></i>
-            <h3>Receive Updates</h3>
-            <p>Get the latest updates in your inbox.</p>
-            <button class="cta-button" href="{% url 'contact' %}">Sign Up</button>
+            <h3 data-translate="receive_updates">Receive Updates</h3>
+            <p data-translate="updates_text">Get the latest updates in your inbox.</p>
+            <button class="cta-button" href="{% url 'contact' %}"  data-translate="signup">Sign Up</button>
         </div>
     </div>
 
     <!-- Info Section -->
     <div class="info-section">
-        <p>Stay informed about Partners in Health's work to provide quality health care for everyone.</p>
-        <button class="cta-button" >Sign Up for Updates</button>
+        <p data-translate="info_text">Stay informed about Partners in Health's work to provide quality health care for everyone.</p>
+        <button class="cta-button"  data-translate="signup_updates">Sign Up for Updates</button>
     </div>
 
     <div class="info-section" style="margin-top: 40px;">
-        <h2>JOIN THE MOVEMENT TO MAKE HEALTH CARE ACCESSIBLE FOR EVERYONE</h2>
-        <a class="prev" href="{% url 'donate' %}"><button class="cta-button">DONATE NOW</button></a>
+        <h2 data-translate="join_healthcare">JOIN THE MOVEMENT TO MAKE HEALTH CARE ACCESSIBLE FOR EVERYONE</h2>
+        <a class="prev" href="{% url 'donate' %}"><button class="cta-button" data-translate="donate_now">DONATE NOW</button></a>
     </div>
 </main>
 <script src="{% static 'js/home.js' %}"></script>

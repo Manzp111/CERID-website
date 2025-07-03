@@ -13,8 +13,24 @@
   <style>
     .drop{
       position: relative;
-      display: inline-block;
+      display: inline-flex;
+      /* width: 80%; */
+      
     }
+    .drop_btn1{
+      width: 80%;
+
+    }
+    .drop_btn{
+      float: right;
+      width: 20%;
+    }
+    .social-links_buttom i{
+      font-size: 40px;
+      padding-left: 10px;
+
+    }
+    
   </style>
 
 
@@ -35,10 +51,11 @@
     <div class="hamburger" onclick="toggleMenu()">☰</div>
 
     <div class="nav-links" id="navLinks">
+
       <a href="{% url 'home' %}" id="nav-home" data-translate="home">Home</a>
       <div class="dropdown">
-        <button class="dropdown-button drop" data-translate="about">About Us</button>
-        <button class="dropdown-button drop" onclick="toggleDropdown()">&#9662;</button>
+        <button class="dropdown-button drop drop_btn1" data-translate="about">About Us</button>
+        <button class="dropdown-button drop drop_btn" onclick="toggleDropdown()">&#9662;</button>
         <div class="dropdown-content" id="dropdownContent">
           
           <a href="{% url 'mission' %}" data-translate="mission">Our Mission</a>
@@ -83,17 +100,17 @@
       <div class="footer-section">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="{% url 'home' %}">Home</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="{% url 'health_research_home' %}">Our Projects</a></li>
-          <li><a href="{% url 'donate' %}"><i class="fa-solid fa-hand-holding-dollar"></i>Donate</a></li>
-          <li><a href="{% url 'contact' %}">Contact</a></li>
+          <li><a href="{% url 'home' %}" data-translate="home">Home</a></li>
+          <li><a href="#" data-translate="about">About Us</a></li>
+          <li><a href="{% url 'health_research_home' %}" data-translate="projects">Our Projects</a></li>
+          <li><a href="{% url 'donate' %}" data-translate="donate"><!--<i class="fa-solid fa-hand-holding-dollar"></i>-->Donate</a></li>
+          <li><a href="{% url 'contact' %}" data-translate="contact" >Contact</a></li>
         </ul>
       </div>
       <div class="footer-section">
         <h4>Site Map</h4>
         <ul>
-          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'home' %}" data-translate="home">Home</a></li>
           <li><a href="#">Our Work</a></li>
           <li><a href="{% url 'health_research_home' %}">CERID's Projects</a></li>
           <li><a href="#">Our Impact</a></li>
@@ -112,8 +129,15 @@
       </div>
     </div>
     <div class="footer-bottom">
+    <div class="social-links social-links_buttom">
+         <a href="#"><i class='bx bxl-facebook'></i></a>
+         <a href="#"><i class='bx bxl-instagram'></i></a>
+         <a href="#"><i class='bx bxl-twitter'></i></a>
+         <a href="#"><i class='bx bxl-linkedin-square'></i></a>
+  </div>
       &copy; Engineer Manzp.
     </div>
+
     <div class="floating-chat" onclick="toggleChatBox()">
       <i class='bx bx-chat'></i>
       <span>Chat with us</span>

@@ -90,7 +90,7 @@ body {
   }
 
   /* Mobile adjustments */
-  @media (max-width: 960px) {
+  /* @media (max-width: 960px) {
     .fb-language-selector {
       position: absolute;
       top: 18px;
@@ -105,7 +105,7 @@ body {
     .language-dropdown {
       right: -50px; 
     }
-  }
+  } */
 
   /* Rest of your existing CSS remains the same */
   .social-links{
@@ -463,13 +463,23 @@ animation-delay: 0.4s;
       width: 100% !important;
       margin: 0 !important;
       z-index: 1000;
+      height: 10%;
+      width: 100%;
+   
+
     }
     .content {
       margin-top: 60px;
     }
     .hamburger {
+      position: absolute;
       display: block;
-      margin-right: 70px;
+      right: 8%;
+    }
+    .fb-language-selector{
+      position: absolute;
+      margin-right: 10%;
+      
     }
     .nav-links {
       display: none;
