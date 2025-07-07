@@ -250,126 +250,126 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <div class="main">
-        <div class="hero">
-            <div>
-                <h1>Our Commitment to Transparency</h1>
-                <p>We believe in open communication and accountability. Explore our financials, impact data, and governance documents below.</p>
-                <button>Learn More</button>
-            </div>
-        </div>
-        
-        <div class="container">
-            <section class="section">
-                <h2><i class="fas fa-chart-line"></i> Financial Transparency</h2>
-                <p>View our annual financial reports and see how we utilize donations to create impact.</p>
-                
-                {% if financial_reports %}
-                <div class="card-grid">
-                    {% for report in financial_reports %}
-                    <div class="card">
-                        <h3>{{ report.title }}</h3>
-                        <p><i class="fas fa-calendar-alt"></i> {{ report.year }} Annual Report</p>
-                        <a href="{{ report.file.url }}" class="btn" target="_blank">
-                            <i class="fas fa-download"></i> Download PDF
-                        </a>
-                    </div>
-                    {% endfor %}
-                </div>
-                {% else %}
-                <div class="empty-state">
-                    <i class="fas fa-file-alt"></i>
-                    <p>No financial reports available at this time.</p>
-                </div>
-                {% endif %}
-            </section>
-            
-            <section class="section">
-                <h2><i class="fas fa-bullseye"></i> Our Impact</h2>
-                <p>Quantitative data showing the difference we've made in our communities.</p>
-                
-                {% if impact_metrics %}
-                <div class="table-responsive">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Year</th>
-                                <th>Projects Completed</th>
-                                <th>People Reached</th>
-                                <th>Regions Covered</th>
-                                <th>Success Rate</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for metric in impact_metrics %}
-                            <tr>
-                                <td>{{ metric.year }}</td>
-                                <td>{{ metric.projects }}</td>
-                                <td>{{ metric.people|floatformat:"0" }}</td>
-                                <td>{{ metric.regions }}</td>
-                                <td>{{ metric.success_rate }}%</td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-                {% else %}
-                <div class="empty-state">
-                    <i class="fas fa-chart-pie"></i>
-                    <p>No impact metrics available at this time.</p>
-                </div>
-                {% endif %}
-            </section>
-            
-            <section class="section">
-                <h2><i class="fas fa-users"></i> Leadership Team</h2>
-                <p>The dedicated individuals guiding our organization's mission and vision.</p>
-                
-                {% if team %}
-                <div class="team">
-                    {% for member in team %}
-                    <div class="team-member">
-                        <img src="{{ member.photo.url }}" alt="{{ member.name }}">
-                        <h3>{{ member.name }}</h3>
-                        <p>{{ member.position }}</p>
-                        {% if member.bio %}
-                        <p class="bio">{{ member.bio|truncatewords:15 }}</p>
-                        {% endif %}
-                    </div>
-                    {% endfor %}
-                </div>
-                {% else %}
-                <div class="empty-state">
-                    <i class="fas fa-user-friends"></i>
-                    <p>No team information available at this time.</p>
-                </div>
-                {% endif %}
-            </section>
-            
-            <section class="section">
-                <h2><i class="fas fa-file-contract"></i> Legal & Governance</h2>
-                <p>Official documents that establish our organization's structure and compliance.</p>
-                
-                {% if legal_docs %}
-                <div class="document-list">
-                    {% for doc in legal_docs %}
-                    <div class="document-item">
-                        <div>
-                            <i class="fas fa-file-pdf file-icon"></i>
-                            <span>{{ doc.name }}</span>
-                        </div>
-                        <a href="{{ doc.file.url }}" class="btn" download>
-                            <i class="fas fa-download"></i> Download
-                        </a>
-                    </div>
-                    {% endfor %}
-                </div>
-                {% else %}
-                <div class="empty-state">
-                    <i class="fas fa-folder-open"></i>
-                    <p>No legal documents available at this time.</p>
-                </div>
-                {% endif %}
-            </section>
-        </div>
+  <div class="hero">
+    <div>
+      <h1 data-translate=transparency_commitment>Our Commitment to Transparency</h1>
+      <p data-translate=transparency_commitment_desc>We believe in open communication and accountability. Explore our financials, impact data, and governance documents below.</p>
+      <button data-translate=learn_more_btn>Learn More</button>
     </div>
+  </div>
+
+  <div class="container">
+    <section class="section">
+      <h2 data-translate=financial_transparency><i class="fas fa-chart-line"></i> Financial Transparency</h2>
+      <p data-translate=financial_transparency_desc>View our annual financial reports and see how we utilize donations to create impact.</p>
+
+      {% if financial_reports %}
+      <div class="card-grid">
+        {% for report in financial_reports %}
+        <div class="card">
+          <h3>{{ report.title }}</h3>
+          <p><i class="fas fa-calendar-alt"></i> {{ report.year }} Annual Report</p>
+          <a href="{{ report.file.url }}" class="btn" target="_blank">
+            <i class="fas fa-download"></i> <span data-translate=download_pdf>Download PDF</span>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}
+      <div class="empty-state">
+        <i class="fas fa-file-alt"></i>
+        <p data-translate=no_financial_reports>No financial reports available at this time.</p>
+      </div>
+      {% endif %}
+    </section>
+
+    <section class="section">
+      <h2 data-translate=our_impact><i class="fas fa-bullseye"></i> Our Impact</h2>
+      <p data-translate=our_impact_desc>Quantitative data showing the difference we've made in our communities.</p>
+
+      {% if impact_metrics %}
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th data-translate=impact_year>Year</th>
+              <th data-translate=projects_completed>Projects Completed</th>
+              <th data-translate=people_reached>People Reached</th>
+              <th data-translate=regions_covered>Regions Covered</th>
+              <th data-translate=success_rate>Success Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for metric in impact_metrics %}
+            <tr>
+              <td>{{ metric.year }}</td>
+              <td>{{ metric.projects }}</td>
+              <td>{{ metric.people|floatformat:"0" }}</td>
+              <td>{{ metric.regions }}</td>
+              <td>{{ metric.success_rate }}%</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% else %}
+      <div class="empty-state">
+        <i class="fas fa-chart-pie"></i>
+        <p data-translate=no_impact_metrics>No impact metrics available at this time.</p>
+      </div>
+      {% endif %}
+    </section>
+
+    <section class="section">
+      <h2 data-translate=leadership_team><i class="fas fa-users"></i> Leadership Team</h2>
+      <p data-translate=leadership_team_desc>The dedicated individuals guiding our organization's mission and vision.</p>
+
+      {% if team %}
+      <div class="team">
+        {% for member in team %}
+        <div class="team-member">
+          <img src="{{ member.photo.url }}" alt="{{ member.name }}">
+          <h3>{{ member.name }}</h3>
+          <p>{{ member.position }}</p>
+          {% if member.bio %}
+          <p class="bio">{{ member.bio|truncatewords:15 }}</p>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}
+      <div class="empty-state">
+        <i class="fas fa-user-friends"></i>
+        <p data-translate=no_team_info>No team information available at this time.</p>
+      </div>
+      {% endif %}
+    </section>
+
+    <section class="section">
+      <h2 data-translate=legal_governance><i class="fas fa-file-contract"></i> Legal & Governance</h2>
+      <p data-translate=legal_governance_desc>Official documents that establish our organization's structure and compliance.</p>
+
+      {% if legal_docs %}
+      <div class="document-list">
+        {% for doc in legal_docs %}
+        <div class="document-item">
+          <div>
+            <i class="fas fa-file-pdf file-icon"></i>
+            <span>{{ doc.name }}</span>
+          </div>
+          <a href="{{ doc.file.url }}" class="btn" download>
+            <i class="fas fa-download"></i> <span data-translate=download>Download</span>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}
+      <div class="empty-state">
+        <i class="fas fa-folder-open"></i>
+        <p data-translate=no_legal_docs>No legal documents available at this time.</p>
+      </div>
+      {% endif %}
+    </section>
+  </div>
+</div>
 {% endblock %}
