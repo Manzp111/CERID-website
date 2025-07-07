@@ -142,80 +142,84 @@
         .button:hover {
             background-color: #2563eb;
             color: white;
+            text-decoration: none;
+        }
+        .pay{
+          text-decoration: none;
+          text-align: center;
         }
   </style>
 </head>
 <body>
 
   <section class="donation-section">
-    <h2>Why Donate?</h2>
+    <h2 data-translate="why_donate">Why Donate?</h2>
 
     <div class="highlight">
-      <p><strong>Your support changes lives.</strong> Every coin you give helps us bring clean water, education, food, and hope to those who need it most. Together, we make a real, lasting impact.</p>
+      <p><strong data-translate="support_changes_lives">Your support changes lives.</strong> 
+         <span data-translate="every_coin_helps">Every coin you give helps us bring clean water, education, food, and hope to those who need it most. Together, we make a real, lasting impact.</span>
+      </p>
     </div>
     
-    <h2>Where the Money Goes</h2>
+    <h2 data-translate="where_money_goes">Where the Money Goes</h2>
     <div class="highlight">
-    <p>We believe in full honesty and transparency. That’s why:</p>
-    <ul style="padding-left: 20px; color: #444;">
-      <li>✔ 90% of your donation goes directly to helping people.</li>
-      <li>✔ 10% helps cover things like transportation, tools, and staff.</li>
-      <li>✔ You can always ask for our financial reports.</li>
-    </ul>
-  </div>
+      <p data-translate="transparency_statement">We believe in full honesty and transparency. That’s why:</p>
+      <ul style="padding-left: 20px; color: #444;">
+        <li data-translate="donation_90">✔ 90% of your donation goes directly to helping people.</li>
+        <li data-translate="donation_10">✔ 10% helps cover things like transportation, tools, and staff.</li>
+        <li data-translate="ask_financial_reports">✔ You can always ask for our financial reports.</li>
+      </ul>
+    </div>
 
-    <h2>Types of Donations</h2>
+    <h2 data-translate="types_of_donations">Types of Donations</h2>
     <div class="donation-types">
       <div class="type-card">
-        <h3>🎁 One-Time Donation</h3>
-        <p>Give once, when you can. Every gift counts and brings change.</p>
+        <h3 data-translate="one_time">🎁 One-Time Donation</h3>
+        <p data-translate="one_time_desc">Give once, when you can. Every gift counts and brings change.</p>
       </div>
       <div class="type-card">
-        <h3>🔄 Monthly Support</h3>
-        <p>Help us every month. It keeps our mission strong and steady.</p>
+        <h3 data-translate="monthly_support">🔄 Monthly Support</h3>
+        <p data-translate="monthly_support_desc">Help us every month. It keeps our mission strong and steady.</p>
       </div>
       <div class="type-card">
-        <h3>🎒 In-Kind Gifts</h3>
-        <p>Donate clothes, books, or other useful items. We pass them to those in need.</p>
+        <h3 data-translate="in_kind">🎒 In-Kind Gifts</h3>
+        <p data-translate="in_kind_desc">Donate clothes, books, or other useful items. We pass them to those in need.</p>
       </div>
       <div class="type-card">
-        <h3>🏢 Corporate Sponsorship</h3>
-        <p>Companies can partner with us, support the community, and grow their positive image.</p>
+        <h3 data-translate="corporate_sponsorship">🏢 Corporate Sponsorship</h3>
+        <p data-translate="corporate_sponsorship_desc">Companies can partner with us, support the community, and grow their positive image.</p>
       </div>
     </div>
-    <header>
-      <h1>Donate Channel</h1>
-      <p>This is our method used to donate to us</p>
-  </header>
 
-  <main>
+    <header>
+      <h1 data-translate="donate_channel">Donate Channel</h1>
+      <p data-translate="donate_method">This is our method used to donate to us</p>
+    </header>
+
+    <main>
       <div class="card">
-          <h2 style="background-color: orangered;">Credit Card</h2>
-          <img src="../../static/images/visaCard.jpg" alt="PayPal">
-          <button class="button">Select</button>
+        <h2 style="background-color:midnightblue" data-translate="paypal">PayPal</h2>
+        <img src="../../static/images/paypal.png" alt="PayPal">
+        <a class="button pay" href="https://www.paypal.com/donate/?hosted_button_id=Z3SSB3VS4NJZC" data-translate="select_btn">Select</a>
       </div>
       <div class="card">
-          <h2 style="background-color:midnightblue">PayPal</h2>
-          <img src="../../static/images/paypal.png" alt="PayPal">
-          <button class="button">Select</button>
+        <h2 style="background-color: #2563eb;" data-translate="bank_account">Bank Account</h2>
+        <i class="fa-solid fa-building-columns" style="background-color: aqua; border-radius: 50%;"></i>
+        <a class="button pay" href="#" data-translate="select_btn">Select</a>
       </div>
       <div class="card">
-          <h2 style="background-color: #2563eb;">Bank Account</h2>
-          <i class="fa-solid fa-building-columns" style="background-color: aqua; border-radius: 50%;" ></i>
-          <button class="button">Select</button>
+        <h2 style="background-color: yellow; color: black;" data-translate="mtn_momo">MTN MoMo</h2>
+        <img src="../../static/images/mtnpay.jpg" alt="MTN MoMo" style="border-radius: 0%;">
+        <button class="button" data-translate="select_btn">Select</button>
       </div>
       <div class="card">
-          <h2 style="background-color: yellow; color: black;">MTN MoMo</h2>
-          <img src="../../static/images/mtnpay.jpg" alt="MTN MoMo" style="border-radius: 0%;">
-          <button class="button">Select</button>
+        <h2 style="background-color: red;" data-translate="airtel_money">Airtel Money</h2>
+        <img src="../../static/images/aitelpay.png" alt="Airtel Money">
+        <button class="button" data-translate="select_btn">Select</button>
       </div>
-      <div class="card">
-          <h2 style="background-color: red;">Airtel Money</h2>
-          <img src="../../static/images/aitelpay.png" alt="Airtel Money">
-          <button class="button">Select</button>
-      </div>
-  </main>
-  </section>
+    </main>
+</section>
+
 
 </body>
 </html>

@@ -87,18 +87,21 @@
   
   <main class="content">
     {% block content %}
-    <!-- content -->
+    <!-- content
+    are placed here -->
+     
     {% endblock %}
   </main>
 
   <footer>
     <div class="footer-container">
       <div class="footer-section">
-        <h4>About CERID</h4>
-        <p>CERID is committed to positive change through education, health and empowerment. Transparency and impact drive our actions every day.</p>
+        <h4 data-translate="about_cerid">About CERID</h4>
+      
+        <p data-translate="description">CELID is an interdisciplinary research center dedicated to promoting sustainable development through innovative and inclusive projects. Our mission is to transform ideas into concrete actions for a better future</p>
       </div>
       <div class="footer-section">
-        <h4>Quick Links</h4>
+        <h4 data-translate="quick-links">Quick Links</h4>
         <ul>
           <li><a href="{% url 'home' %}" data-translate="home">Home</a></li>
           <li><a href="#" data-translate="about">About Us</a></li>
