@@ -70,8 +70,8 @@ def contact(request):
 
 
 
-def transparency(request):
-    return render(request,'homepages/transparency.html')
+# def transparency1(request):
+#     return render(request,'homepages/transparency.html')
 
 
 #def view_testmonials(request):

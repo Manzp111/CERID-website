@@ -21,6 +21,7 @@ body {
     height: 60px;
     z-index: 1000;
     transition: width 0.3s ease, margin 0.3s ease;
+    
   }
 
   .navbar-scrolled {
@@ -32,9 +33,9 @@ body {
 
   /* Facebook-style Language Selector */
   .fb-language-selector {
-    position: relative;
-    margin-left: auto;
-    margin-right: 20px;
+    /* position: absolute; */
+    /* margin-left: 30px; */
+    right: 30px;
   }
 
   .selected-language {
@@ -72,6 +73,10 @@ body {
   .language-dropdown.show {
     display: block;
   }
+  .drop{
+      position: relative;
+      display: inline-block;
+    }
 
   .language-option {
     padding: 8px 16px;
@@ -85,22 +90,22 @@ body {
   }
 
   /* Mobile adjustments */
-  @media (max-width: 960px) {
+  /* @media (max-width: 960px) {
     .fb-language-selector {
       position: absolute;
-      top: 10px;
-      right: 60px;
+      top: 18px;
+      right: 90px;
      
     }
     .selected-language {
-      padding: 5px 8px;
+      padding: 5px 8px 0 0;
       font-size: 14px;
     }
     
     .language-dropdown {
       right: -50px; 
     }
-  }
+  } */
 
   /* Rest of your existing CSS remains the same */
   .social-links{
@@ -451,20 +456,30 @@ animation-delay: 0.4s;
 50% { transform: translateY(-5px); }
 }
   @media (max-width: 700px) {
-    nav.navbar3r {
+  .navbar3r {
       position: fixed !important;
       top: 0;
       left: 0;
       width: 100% !important;
       margin: 0 !important;
       z-index: 1000;
+      height: 10%;
+      width: 100%;
+   
+
     }
     .content {
       margin-top: 60px;
     }
     .hamburger {
+      position: absolute;
       display: block;
-      margin-right: 70px;
+      right: 8%;
+    }
+    .fb-language-selector{
+      position: absolute;
+      margin-right: 10%;
+      
     }
     .nav-links {
       display: none;

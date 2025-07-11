@@ -14,7 +14,7 @@ urlpatterns=[
     path("cred/",views.cred,name='cred'),
     path("contact/",views.contact,name='contact'),
     path("transparency/",views.transparency,name='transparency'),
-    # path('testemonials/video/',views.view_testmonials,name='viewTestimonials'),
+
     path('partners/',views.partner,name='partners'),
     path('document/',views.document,name='document'),
     path('our_project/', views.health_research_home, name='health_research_home'),

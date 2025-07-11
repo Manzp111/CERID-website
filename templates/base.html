@@ -10,6 +10,29 @@
   <link rel="stylesheet" href="{% static 'css/base/base.css' %}">
   <script src="{% static 'js/base/base.js' %}"></script>
 
+  <style>
+    .drop{
+      position: relative;
+      display: inline-flex;
+      /* width: 80%; */
+      
+    }
+    .drop_btn1{
+      width: 80%;
+
+    }
+    .drop_btn{
+      float: right;
+      width: 20%;
+    }
+    .social-links_buttom i{
+      font-size: 40px;
+      padding-left: 10px;
+
+    }
+    
+  </style>
+
 
 </head>
 <body>
@@ -28,10 +51,13 @@
     <div class="hamburger" onclick="toggleMenu()">☰</div>
 
     <div class="nav-links" id="navLinks">
+
       <a href="{% url 'home' %}" id="nav-home" data-translate="home">Home</a>
       <div class="dropdown">
-        <button class="dropdown-button" onclick="toggleDropdown()">About Us &#9662;</button>
+        <button class="dropdown-button drop drop_btn1" data-translate="about">About Us</button>
+        <button class="dropdown-button drop drop_btn" onclick="toggleDropdown()">&#9662;</button>
         <div class="dropdown-content" id="dropdownContent">
+          
           <a href="{% url 'mission' %}" data-translate="mission">Our Mission</a>
           <a href="{% url 'leadership' %}" data-translate="leadership">CELID Leadership</a>
           <a href="#" data-translate="history">Our History</a>
@@ -61,30 +87,33 @@
   
   <main class="content">
     {% block content %}
-    <!-- content -->
+    <!-- content
+    are placed here -->
+     
     {% endblock %}
   </main>
 
   <footer>
     <div class="footer-container">
       <div class="footer-section">
-        <h4>About CERID</h4>
-        <p>CERID is committed to positive change through education, health and empowerment. Transparency and impact drive our actions every day.</p>
+        <h4 data-translate="about_cerid">About CERID</h4>
+      
+        <p data-translate="description">CELID is an interdisciplinary research center dedicated to promoting sustainable development through innovative and inclusive projects. Our mission is to transform ideas into concrete actions for a better future</p>
       </div>
       <div class="footer-section">
-        <h4>Quick Links</h4>
+        <h4 data-translate="quick-links">Quick Links</h4>
         <ul>
-          <li><a href="{% url 'home' %}">Home</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="{% url 'health_research_home' %}">Our Projects</a></li>
-          <li><a href="{% url 'donate' %}"><i class="fa-solid fa-hand-holding-dollar"></i>Donate</a></li>
-          <li><a href="{% url 'contact' %}">Contact</a></li>
+          <li><a href="{% url 'home' %}" data-translate="home">Home</a></li>
+          <li><a href="#" data-translate="about">About Us</a></li>
+          <li><a href="{% url 'health_research_home' %}" data-translate="projects">Our Projects</a></li>
+          <li><a href="{% url 'donate' %}" data-translate="donate"><!--<i class="fa-solid fa-hand-holding-dollar"></i>-->Donate</a></li>
+          <li><a href="{% url 'contact' %}" data-translate="contact" >Contact</a></li>
         </ul>
       </div>
       <div class="footer-section">
         <h4>Site Map</h4>
         <ul>
-          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'home' %}" data-translate="home">Home</a></li>
           <li><a href="#">Our Work</a></li>
           <li><a href="{% url 'health_research_home' %}">CERID's Projects</a></li>
           <li><a href="#">Our Impact</a></li>
@@ -103,8 +132,15 @@
       </div>
     </div>
     <div class="footer-bottom">
+    <div class="social-links social-links_buttom">
+         <a href="#"><i class='bx bxl-facebook'></i></a>
+         <a href="#"><i class='bx bxl-instagram'></i></a>
+         <a href="#"><i class='bx bxl-twitter'></i></a>
+         <a href="#"><i class='bx bxl-linkedin-square'></i></a>
+  </div>
       &copy; Engineer Manzp.
     </div>
+
     <div class="floating-chat" onclick="toggleChatBox()">
       <i class='bx bx-chat'></i>
       <span>Chat with us</span>
